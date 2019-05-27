@@ -53,8 +53,6 @@ CIDR.prototype.extractIP = function(str) {
         if (j < 3)
                 throw new Error(`Argument 1 of CIDR.prototype.parse is malformed. Expected 4 octets, got ${j}.`);
 
-        // out += +str.substr(tmp + j);
-
         return out;
 };
 
