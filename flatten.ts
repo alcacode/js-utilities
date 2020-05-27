@@ -10,7 +10,7 @@ function flatten<T>(arr: T[], depth?: number):
         (T extends (infer R)[] ? R[] : T)[]
 {
         if (!Array.isArray(arr))
-                return arr as any;
+                return arr;
 
         const _d = (depth === undefined ? 1 : depth);
         const stack: T[][] = [ arr ];
@@ -55,7 +55,7 @@ function flattenUnbound<T>(arr: T[]):
         (T extends (infer R)[] ? (R extends any[] ? never : R) : T)[]
 {
         if (!Array.isArray(arr))
-                return arr as any;
+                return arr;
 
         const stack: T[][] = [ arr ];
         const indicies     = [ 0, 0, 0, 0 ];
